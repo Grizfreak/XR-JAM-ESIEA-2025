@@ -18,6 +18,7 @@ public class InventoryTrigger : MonoBehaviour
         // if the object is a suckable and the player is sucking
         if (other.gameObject.CompareTag(tagToSuck) && suckManager.GetComponent<suckProjectile>().isSucking && !suckManager.GetComponent<InventoryManager>().IsFull())
         {
+            Debug.Log("Suck");
             // suck the object
             suckManager.GetComponent<InventoryManager>().AddItem(other.gameObject);
             other.gameObject.SetActive(false);

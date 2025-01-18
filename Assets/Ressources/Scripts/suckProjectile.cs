@@ -16,6 +16,7 @@ public class suckProjectile : MonoBehaviour
     {
         isSucking = false;
         suckionBox.SetActive(false);
+        windAnim.SetActive(false);
         suckButton.action.performed += ctx => suckTrigger();
         suckReleaseButton.action.performed += ctx => suckReleaseTrigger();
     }

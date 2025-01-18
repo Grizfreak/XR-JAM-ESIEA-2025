@@ -112,7 +112,7 @@ public class projectTrajectory : MonoBehaviour
 
     public void HoldReleaseTrigger()
     {
-        if (this.GetComponent<InventoryManager>().IsFull())
+        if (this.GetComponent<InventoryManager>().IsFull() && !this.GetComponent<suckProjectile>().isSucking)
         {
             GetComponent<shootProjectile>().shoot(launchPosition, launchPosition.forward, velocity);
             controller.SendHapticImpulse(0f, 0.5f);

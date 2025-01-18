@@ -10,6 +10,7 @@ public class suckProjectile : MonoBehaviour
     public float suckForce;
     public bool isSucking;
     public GameObject suckionBox;
+    public GameObject windAnim;
     // Start is called before the first frame update
     void Start()
     {
@@ -26,6 +27,7 @@ public class suckProjectile : MonoBehaviour
         if (!GetComponent<projectTrajectory>().isProjecting)
         {
             isSucking = true;
+            windAnim.SetActive(true);
             suckionBox.SetActive(true);
             suckionBox.GetComponent<suckTrigger>().setSuckForce(suckForce);
         }
@@ -34,6 +36,7 @@ public class suckProjectile : MonoBehaviour
     public void suckReleaseTrigger()
     {
         isSucking = false;
+        windAnim.SetActive(false);
         // deactivate the suction box
         suckionBox.SetActive(false);
     }

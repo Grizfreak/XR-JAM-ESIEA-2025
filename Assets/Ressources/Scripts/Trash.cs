@@ -17,6 +17,7 @@ public class Trash : MonoBehaviour
     }
     [TagSelector] public string tagToSuck;
     public TrashType trashType;
+    public Sprite icon;
 
     public void Start()
     {

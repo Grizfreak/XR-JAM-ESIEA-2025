@@ -517,6 +517,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tagToSuck: Suckable
   trashType: 0
+  icon: {fileID: 21300000, guid: e31b0872c5a6e4f4eb2bb7907f19df1f, type: 3}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -937,6 +938,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tagToSuck: Suckable
   trashType: 2
+  icon: {fileID: 21300000, guid: 2c37483407c69b24d8fd78fa2489e37a, type: 3}
 --- !u!1001 &9026884070868374450
 PrefabInstance:
   m_ObjectHideFlags: 0

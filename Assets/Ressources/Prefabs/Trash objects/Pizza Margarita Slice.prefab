@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 7449898044972878541}
   - component: {fileID: 2344993709551214799}
   - component: {fileID: 616279006765420322}
+  - component: {fileID: 861690761699213943}
   m_Layer: 0
   m_Name: Pizza Margarita Slice
   m_TagString: Untagged
@@ -134,3 +135,17 @@ MeshCollider:
   m_Convex: 1
   m_CookingOptions: 30
   m_Mesh: {fileID: 2358874452545590804, guid: e0fe3a49876350f4cb9a6791b45374ca, type: 3}
+--- !u!114 &861690761699213943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8963191013033372440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cc8fc033b1a85e41b55ab00a9ff4d04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagToSuck: Suckable
+  trashType: 0

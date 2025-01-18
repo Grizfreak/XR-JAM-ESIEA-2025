@@ -1,0 +1,58 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &4175571100235194888
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 146766064702547909}
+  - component: {fileID: 7110208758454145230}
+  m_Layer: 0
+  m_Name: Spawner
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &146766064702547909
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4175571100235194888}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 2.4, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &7110208758454145230
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 4175571100235194888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 6cab70907b181cb4992a5d03acc23f23, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  spawningItems:
+  - {fileID: 7292808117586842926, guid: 542c92fb752aed142a91ef2ae943eda2, type: 3}
+  - {fileID: 9208151440021316174, guid: 097370daf51e3d84ca9915aa23b590c2, type: 3}
+  - {fileID: 8887144258870069092, guid: 7479afc3f76c6aa4299120f2562807cf, type: 3}
+  - {fileID: 1519537717051864, guid: f11cc9e6e7553224ea19d6a2022331c8, type: 3}
+  - {fileID: 100000, guid: 23fc59362ba1e264eb5b636821ad929a, type: 3}
+  - {fileID: 8963191013033372440, guid: 65aae641301cf1648838c3a581715932, type: 3}
+  - {fileID: 46316974419523361, guid: 32b6638ebec247b44b0526cb5a4f177f, type: 3}
+  - {fileID: 3240747800151012405, guid: ec11039cbe3be944a9faecfbd5f5cb1a, type: 3}
+  timeBetweeneachSpawn: 2
+  currentTime: 0
+  canSpawn: 1

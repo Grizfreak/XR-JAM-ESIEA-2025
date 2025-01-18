@@ -4,6 +4,7 @@ using UnityEngine;
 using UnityEngine.InputSystem;
 
 [RequireComponent(typeof(LineRenderer))]
+[RequireComponent(typeof(shootProjectile))]
 public class projectTrajectory : MonoBehaviour
 {
     public float velocity;
@@ -19,6 +20,7 @@ public class projectTrajectory : MonoBehaviour
     public InputActionReference holdButton;
     public InputActionReference holdReleaseButton;
     public GameObject hitPointMarker;
+    public LayerMask layerMask;
     // Start is called before the first frame update
     void Start()
     {
@@ -32,7 +34,7 @@ public class projectTrajectory : MonoBehaviour
     // Update is called once per frame
     private void FixedUpdate()
     {
-        if (isProjecting)
+        if (isProjecting && GetComponent<InventoryManager>().IsFull())
         {
             project();
             // increase velocity based on how long the button is held
@@ -48,11 +50,14 @@ public class projectTrajectory : MonoBehaviour
             
             Debug.Log("velocity: " + velocity);
         }
+        else if (isProjecting && !GetComponent<InventoryManager>().IsFull())
+        {
+            Debug.Log("Empty");
+        }
     }
 
     public void project()
     {
-        Debug.Log("projecting trajectory");
         // Set the line renderer to be visible
         lineRenderer.enabled = true;
         // The idea is to project the trajectory of the object till it hits the ground
@@ -78,7 +83,8 @@ public class projectTrajectory : MonoBehaviour
 
             Ray ray = new Ray(previouspoint, segmentDirection);
             RaycastHit hit;
-            if (Physics.Raycast(ray, out hit, Vector3.Distance(previouspoint, currentpoint)))
+            // exclude layer
+            if (Physics.Raycast(ray, out hit, Vector3.Distance(previouspoint, currentpoint), layerMask))
             {
                 // If the object has hit something, stop projecting
                 lineRenderer.positionCount = i + 1;
@@ -97,6 +103,10 @@ public class projectTrajectory : MonoBehaviour
 
     public void HoldReleaseTrigger()
     {
+        if (this.GetComponent<InventoryManager>().IsFull())
+        {
+            GetComponent<shootProjectile>().shoot(launchPosition, launchPosition.forward, velocity);
+        }
         isProjecting = false;
         hitPointMarker.SetActive(false);
         lineRenderer.enabled = false;
@@ -106,6 +116,10 @@ public class projectTrajectory : MonoBehaviour
 
     public void HoldTrigger()
     {
+        if (this.GetComponent<suckProjectile>().isSucking)
+        {
+            return;
+        }
         isProjecting = true;
     }
 }

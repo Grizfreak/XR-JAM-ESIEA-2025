@@ -936,7 +936,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   tagToSuck: Suckable
-  trashType: 0
+  trashType: 2
 --- !u!1001 &9026884070868374450
 PrefabInstance:
   m_ObjectHideFlags: 0

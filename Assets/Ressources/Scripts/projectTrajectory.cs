@@ -2,6 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+using UnityEngine.XR.Interaction.Toolkit;
 
 [RequireComponent(typeof(LineRenderer))]
 [RequireComponent(typeof(shootProjectile))]
@@ -21,9 +22,11 @@ public class projectTrajectory : MonoBehaviour
     public InputActionReference holdReleaseButton;
     public GameObject hitPointMarker;
     public LayerMask layerMask;
+    public ActionBasedController controller;
     // Start is called before the first frame update
     void Start()
     {
+        controller = transform.parent.gameObject.GetComponent<ActionBasedController>();
         lineRenderer = GetComponent<LineRenderer>();
         isProjecting = false;
         lineRenderer.enabled = false;
@@ -38,6 +41,8 @@ public class projectTrajectory : MonoBehaviour
         {
             project();
             // increase velocity based on how long the button is held
+            // vibrate till release
+            // vibration should rise up as the maxhold time is reached
             currentHold += Time.fixedDeltaTime;
             if (currentHold > maxHold)
             {
@@ -47,7 +52,9 @@ public class projectTrajectory : MonoBehaviour
             {
                 velocity = (currentHold + 0.5f) * maxVelocity / maxHold;
             }
-            
+
+            controller.SendHapticImpulse(currentHold / maxHold, 0.5f);
+
             Debug.Log("velocity: " + velocity);
         }
         else if (isProjecting && !GetComponent<InventoryManager>().IsFull())
@@ -58,6 +65,8 @@ public class projectTrajectory : MonoBehaviour
 
     public void project()
     {
+        // play haptics when projecting
+        
         // Set the line renderer to be visible
         lineRenderer.enabled = true;
         // The idea is to project the trajectory of the object till it hits the ground
@@ -106,6 +115,7 @@ public class projectTrajectory : MonoBehaviour
         if (this.GetComponent<InventoryManager>().IsFull())
         {
             GetComponent<shootProjectile>().shoot(launchPosition, launchPosition.forward, velocity);
+            controller.SendHapticImpulse(0f, 0.5f);
         }
         isProjecting = false;
         hitPointMarker.SetActive(false);

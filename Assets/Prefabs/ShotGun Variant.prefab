@@ -372,6 +372,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   suckManager: {fileID: 0}
+  tagToSuck: Suckable
 --- !u!1 &4927433261387830594 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 8901172656677072605, guid: a92941620d7cefc41a9622c861eea0c1, type: 3}

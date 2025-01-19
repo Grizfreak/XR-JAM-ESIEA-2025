@@ -6000,10 +6000,8 @@ MonoBehaviour:
   replayButton: {fileID: 1324057378}
   nextAble: {fileID: 963949245}
   nextNotAble: {fileID: 1166854017}
-  redStart: -30
-  redEnd: -60
-  greenStart: 20
-  greenEnd: 50
+  redEnd: -100
+  greenEnd: 100
 --- !u!1001 &2095576648
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -6117,6 +6115,10 @@ PrefabInstance:
       propertyPath: m_BackGroundColor.r
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 4732600948222381855, guid: 5c4efbc10ab2e6540af917db04648081, type: 3}
+      propertyPath: m_ModelPrefab
+      value: 
+      objectReference: {fileID: 5704392619854335992, guid: 0cc05e04a7588ee4db1aa7625aa2a1f7, type: 3}
     - target: {fileID: 4961102680496521144, guid: 5c4efbc10ab2e6540af917db04648081, type: 3}
       propertyPath: m_IsActive
       value: 0

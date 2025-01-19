@@ -12,10 +12,8 @@ public class ScoreManager : MonoBehaviour
     public GameObject replayButton;
     public GameObject nextAble;
     public GameObject nextNotAble;
-    public float redStart = -30f;
-    public float redEnd = -60f;
-    public float greenStart = 20f;
-    public float greenEnd = 50f;
+    public float redEnd;
+    public float greenEnd;
 
     private void Awake()
     {
@@ -49,18 +47,20 @@ public class ScoreManager : MonoBehaviour
         slider.transform.parent.gameObject.GetComponentInChildren<AudioSource>().Play();
         float value = 0f;
 
-        if (score >= greenEnd)
+        // set slider value based on the score, clamp the value between redEnd and greenEnd, respectively -50 and 50
+        // then normalize the value between 0 and 1
+        if (score < -redEnd)
         {
-            value = 1f;
-        } else if ( score <= redEnd)
+            value = 0;
+        }
+        else if (score > greenEnd)
         {
-            value = 0f;
+            value = 1;
         }
         else
         {
-            value = (score - (-1 * redEnd)) / (greenEnd - (-1 * redEnd));
+            value = (score + redEnd) / (greenEnd + redEnd);
         }
-        slider.value = value;
         slider.GetComponent<FaceDisplayer>().onValueChanged(value);
 
         if (score <= -30)

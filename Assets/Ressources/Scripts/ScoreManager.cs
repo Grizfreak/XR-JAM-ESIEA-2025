@@ -46,6 +46,7 @@ public class ScoreManager : MonoBehaviour
         scoreScene.SetActive(true);
         // get the slider component in the children of the scoreScene
         UnityEngine.UI.Slider slider = scoreScene.GetComponentInChildren<UnityEngine.UI.Slider>();
+        slider.transform.parent.gameObject.GetComponentInChildren<AudioSource>().Play();
         float value = 0f;
 
         if (score >= greenEnd)

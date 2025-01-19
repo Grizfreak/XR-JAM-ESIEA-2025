@@ -14,15 +14,16 @@ public class GameManager : MonoBehaviour
         UnityEngine.SceneManagement.SceneManager.LoadScene(sceneName);
     }
 
-    public void LoadNextLevel()
+    public void LoadNextLevel(SelectEnterEventArgs args)
     {
+        args.interactableObject.transform.gameObject.GetComponentInChildren<AudioSource>().Play();
         level++;
         if (level > 2)
         {
-            LoadMenu();
+            StartCoroutine(WaitForSound(args, "LobbyScene"));
             return;
         }
-        LoadScene("GameScene");
+        StartCoroutine(WaitForSound(args, "GameScene"));
     }
 
     private void Awake()
@@ -38,24 +39,28 @@ public class GameManager : MonoBehaviour
         }
     }
 
-    public void resetLevel()
+    public void resetLevel(SelectEnterEventArgs args)
     {
-        LoadScene("GameScene");
-    }
-
-    public void LoadMenu()
-    {
-        LoadScene("LobbyScene");
+        args.interactableObject.transform.gameObject.GetComponentInChildren<AudioSource>().Play();
+        StartCoroutine(WaitForSound(args, "GameScene"));
     }
 
     public void LoadGame(SelectEnterEventArgs args)
     {
+        args.interactableObject.transform.gameObject.GetComponentInChildren<AudioSource>().Play();
         level = 0;
         if (args.interactorObject.transform.parent.gameObject.name.Contains("Right"))
         {
             isRightHanded = true;
         }
         else isRightHanded = false;
-        LoadScene("GameScene");
+        // wait for sound to finish
+        StartCoroutine(WaitForSound(args, "GameScene"));
+    }
+
+    private IEnumerator WaitForSound(SelectEnterEventArgs args, string scene)
+    {
+        yield return new WaitForSeconds(args.interactableObject.transform.gameObject.GetComponentInChildren<AudioSource>().clip.length);
+        LoadScene(scene);
     }
 }

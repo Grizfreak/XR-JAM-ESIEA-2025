@@ -33,7 +33,7 @@ public class TimeManager : MonoBehaviour
         {
             timeLeft -= Time.deltaTime;
             // if time is < 10 seconds, play a sound
-            if (timeLeft < 10)
+            if (timeLeft < 10f)
             {
                 GetComponent<AudioSource>().Play();
             }

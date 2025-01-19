@@ -47,7 +47,7 @@ public class ScoreManager : MonoBehaviour
         slider.transform.parent.gameObject.GetComponentInChildren<AudioSource>().Play();
         slider.maxValue = greenEnd;
         slider.minValue = redEnd;
-        float value = 0f;
+        float value = score;
 
         if (score <= redEnd)
         {

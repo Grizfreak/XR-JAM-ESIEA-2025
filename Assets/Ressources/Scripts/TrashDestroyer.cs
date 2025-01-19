@@ -11,6 +11,7 @@ public class TrashDestroyer : MonoBehaviour
     {
         if (collision.gameObject.CompareTag(tagToDestroy))
         {
+            if (collision.gameObject.GetComponent<Trash>().hasBeenThrown) return;
             if (shouldRemoveScore)
             {
                 collision.gameObject.GetComponent<Trash>().throwAnim();

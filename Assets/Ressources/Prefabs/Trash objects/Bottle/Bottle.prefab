@@ -33,8 +33,7 @@ Transform:
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 100, y: 100, z: 100}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 5376986126028172047}
+  m_Children: []
   m_Father: {fileID: 7961962770413981588}
   m_LocalEulerAnglesHint: {x: -90, y: 0, z: 0}
 --- !u!33 &4026345948734615782
@@ -151,7 +150,7 @@ MonoBehaviour:
   tagToSuck: Suckable
   trashType: 3
   icon: {fileID: 21300000, guid: 3dd9e1057c469234e936650fb85bb17c, type: 3}
-  badAnim: {fileID: 0}
+  particles: {fileID: 5911399825732599416, guid: fd843704b383c374fa3232edf8d2a66d, type: 3}
 --- !u!1 &7292808117586842926
 GameObject:
   m_ObjectHideFlags: 0
@@ -226,77 +225,3 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   brokenBottlePrefab: {fileID: 9127186685924032221, guid: 344f2b6ade7a1c94f841578f818617ee, type: 3}
---- !u!1001 &6031053195313818531
-PrefabInstance:
-  m_ObjectHideFlags: 0
-  serializedVersion: 2
-  m_Modification:
-    serializedVersion: 3
-    m_TransformParent: {fileID: 4984831297677820735}
-    m_Modifications:
-    - target: {fileID: 1813963880091009196, guid: fd843704b383c374fa3232edf8d2a66d, type: 3}
-      propertyPath: m_LocalScale.x
-      value: 0.015000001
-      objectReference: {fileID: 0}
-    - target: {fileID: 1813963880091009196, guid: fd843704b383c374fa3232edf8d2a66d, type: 3}
-      propertyPath: m_LocalScale.y
-      value: 0.015000001
-      objectReference: {fileID: 0}
-    - target: {fileID: 1813963880091009196, guid: fd843704b383c374fa3232edf8d2a66d, type: 3}
-      propertyPath: m_LocalScale.z
-      value: 0.015000001
-      objectReference: {fileID: 0}
-    - target: {fileID: 1813963880091009196, guid: fd843704b383c374fa3232edf8d2a66d, type: 3}
-      propertyPath: m_LocalPosition.x
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1813963880091009196, guid: fd843704b383c374fa3232edf8d2a66d, type: 3}
-      propertyPath: m_LocalPosition.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1813963880091009196, guid: fd843704b383c374fa3232edf8d2a66d, type: 3}
-      propertyPath: m_LocalPosition.z
-      value: 0.003
-      objectReference: {fileID: 0}
-    - target: {fileID: 1813963880091009196, guid: fd843704b383c374fa3232edf8d2a66d, type: 3}
-      propertyPath: m_LocalRotation.w
-      value: 1
-      objectReference: {fileID: 0}
-    - target: {fileID: 1813963880091009196, guid: fd843704b383c374fa3232edf8d2a66d, type: 3}
-      propertyPath: m_LocalRotation.x
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1813963880091009196, guid: fd843704b383c374fa3232edf8d2a66d, type: 3}
-      propertyPath: m_LocalRotation.y
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1813963880091009196, guid: fd843704b383c374fa3232edf8d2a66d, type: 3}
-      propertyPath: m_LocalRotation.z
-      value: -0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1813963880091009196, guid: fd843704b383c374fa3232edf8d2a66d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.x
-      value: -90
-      objectReference: {fileID: 0}
-    - target: {fileID: 1813963880091009196, guid: fd843704b383c374fa3232edf8d2a66d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.y
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 1813963880091009196, guid: fd843704b383c374fa3232edf8d2a66d, type: 3}
-      propertyPath: m_LocalEulerAnglesHint.z
-      value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 5911399825732599416, guid: fd843704b383c374fa3232edf8d2a66d, type: 3}
-      propertyPath: m_Name
-      value: Particle System
-      objectReference: {fileID: 0}
-    m_RemovedComponents: []
-    m_RemovedGameObjects: []
-    m_AddedGameObjects: []
-    m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: fd843704b383c374fa3232edf8d2a66d, type: 3}
---- !u!4 &5376986126028172047 stripped
-Transform:
-  m_CorrespondingSourceObject: {fileID: 1813963880091009196, guid: fd843704b383c374fa3232edf8d2a66d, type: 3}
-  m_PrefabInstance: {fileID: 6031053195313818531}
-  m_PrefabAsset: {fileID: 0}

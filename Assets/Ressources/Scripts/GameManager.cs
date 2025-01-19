@@ -46,5 +46,6 @@ public class GameManager : MonoBehaviour
     {
         level = 0;
         Debug.Log(args.interactorObject.transform.parent.gameObject.name);
+        LoadScene("GameScene");
     }
 }

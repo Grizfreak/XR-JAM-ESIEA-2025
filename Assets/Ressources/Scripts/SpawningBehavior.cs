@@ -23,7 +23,7 @@ public class SpawningBehavior : MonoBehaviour
             {
                 // instantiate a random item
                 int randomIndex = Random.Range(0, spawningItems.Length);
-                Instantiate(spawningItems[randomIndex], transform.position, Quaternion.identity);
+                Instantiate(spawningItems[randomIndex], transform.position, spawningItems[randomIndex].gameObject.transform.rotation);
                 currentTime = 0f;
             }
         }

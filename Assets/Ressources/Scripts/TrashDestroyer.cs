@@ -13,6 +13,8 @@ public class TrashDestroyer : MonoBehaviour
         {
             if (shouldRemoveScore)
             {
+                // the animation should play in up direction so we need to rotate it
+                collision.gameObject.GetComponent<Trash>().badAnim.transform.rotation.SetLookRotation(Vector3.up);
                 collision.gameObject.GetComponent<Trash>().throwAnim();
                 Destroy(collision.gameObject, 2f);
                 ScoreManager.Instance.AddScore(-10);

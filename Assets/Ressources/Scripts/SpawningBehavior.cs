@@ -4,10 +4,23 @@ using UnityEngine;
 
 public class SpawningBehavior : MonoBehaviour
 {
+    public static SpawningBehavior instance;
     [SerializeField] GameObject[] spawningItems;
     public float timeBetweeneachSpawn;
     public float currentTime;
     public bool canSpawn;
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(this);
+        }
+    }
     // Start is called before the first frame update
     void Start()
     {

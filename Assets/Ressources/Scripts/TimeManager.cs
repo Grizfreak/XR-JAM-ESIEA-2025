@@ -23,6 +23,7 @@ public class TimeManager : MonoBehaviour
     public void StartTimer()
     {
         StartCoroutine(Countdown());
+        SpawningBehavior.instance.canSpawn = true;
     }
 
     private IEnumerator Countdown()
@@ -33,6 +34,7 @@ public class TimeManager : MonoBehaviour
             timeLeft -= Time.deltaTime;
             yield return null;
         }
-        Debug.Log("Time's up!");
+        SpawningBehavior.instance.canSpawn = false;
+        GamemodeManager.instance.EndGame();
     }
 }

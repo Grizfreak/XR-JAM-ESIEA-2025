@@ -16,6 +16,11 @@ public class GameManager : MonoBehaviour
     public void LoadNextLevel()
     {
         level++;
+        if (level > 2)
+        {
+            LoadMenu();
+            return;
+        }
         LoadScene("GameScene");
     }
 

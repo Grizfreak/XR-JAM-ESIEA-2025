@@ -8,6 +8,7 @@ public class InventoryTrigger : MonoBehaviour
     public GameObject suckManager;
     [TagSelector] public string tagToSuck;
 
+
     private void Start()
     {
         // the script is in the parent object

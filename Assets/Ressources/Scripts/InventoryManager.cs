@@ -7,6 +7,19 @@ public class InventoryManager : MonoBehaviour
 {
     public GameObject itemInSucker = null;
     public Image icon;
+    public static InventoryManager instance;
+
+    private void Awake()
+    {
+        if (instance == null)
+        {
+            instance = this;
+        }
+        else
+        {
+            Destroy(this);
+        }
+    }
 
     public void Start()
     {
@@ -31,5 +44,12 @@ public class InventoryManager : MonoBehaviour
         itemInSucker = null;
         icon.enabled = false;
         return item;
+    }
+
+    public void DeleteObject()
+    {
+        Destroy(itemInSucker);
+        itemInSucker = null;
+        icon.enabled = false;
     }
 }

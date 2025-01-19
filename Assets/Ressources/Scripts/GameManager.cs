@@ -7,6 +7,7 @@ public class GameManager : MonoBehaviour
 {
     public static GameManager instance;
     public int level;
+    public bool isRightHanded;
 
     private void LoadScene(string sceneName)
     {
@@ -44,13 +45,17 @@ public class GameManager : MonoBehaviour
 
     public void LoadMenu()
     {
-        LoadScene("MenuScene");
+        LoadScene("LobbyScene");
     }
 
     public void LoadGame(SelectEnterEventArgs args)
     {
         level = 0;
-        Debug.Log(args.interactorObject.transform.parent.gameObject.name);
+        if (args.interactorObject.transform.parent.gameObject.name.Contains("Right"))
+        {
+            isRightHanded = true;
+        }
+        else isRightHanded = false;
         LoadScene("GameScene");
     }
 }

@@ -39,6 +39,7 @@ public class ScoreManager : MonoBehaviour
 
     public void DisplayScore()
     {
+        scoreScene.SetActive(true);
         // get the slider component in the children of the scoreScene
         UnityEngine.UI.Slider slider = scoreScene.GetComponentInChildren<UnityEngine.UI.Slider>();
         //  > -30 orange  / > +10 green start
@@ -66,6 +67,7 @@ public class ScoreManager : MonoBehaviour
         }
 
         slider.value = value;
+        slider.GetComponent<FaceDisplayer>().onValueChanged(value);
 
         if (score < -30)
         {

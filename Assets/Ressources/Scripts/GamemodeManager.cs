@@ -7,6 +7,12 @@ public class GamemodeManager : MonoBehaviour
     public GarbageManager garbageManager;
     public List<Canvas> garbageCanvas;
     public static GamemodeManager instance;
+    public GameObject leftController;
+    public GameObject rightController;
+    public GameObject pokeInteractorLeft;
+    public GameObject pokeInteractorRight;
+    public GameObject XRModelLeft;
+    public GameObject XRModelRight;
 
     void Awake()
     {
@@ -22,7 +28,23 @@ public class GamemodeManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
-        
+        if (GameManager.instance.isRightHanded)
+        {
+            leftController.SetActive(false);
+            XRModelLeft.SetActive(false);
+            XRModelRight.SetActive(false);
+            pokeInteractorRight.SetActive(false);
+            pokeInteractorLeft.SetActive(false);
+            rightController.SetActive(true);
+        } else
+        {
+            rightController.SetActive(false);
+            XRModelLeft.SetActive(false);
+            XRModelRight.SetActive(false);
+            pokeInteractorRight.SetActive(false);
+            pokeInteractorLeft.SetActive(false);
+            leftController.SetActive(true);
+        }
         switch (GameManager.instance.level)
         {
             case 0:
@@ -67,8 +89,20 @@ public class GamemodeManager : MonoBehaviour
 
     public void EndGame()
     {
+        GameObject gun = GameObject.FindGameObjectWithTag("Gun");
+        gun.SetActive(false);
+        if (GameManager.instance.isRightHanded)
+        {
+            XRModelRight.SetActive(true);
+            pokeInteractorRight.SetActive(true);
+        }
+        else
+        {
+            XRModelLeft.SetActive(true);
+            pokeInteractorLeft.SetActive(true);
+        }
         garbageManager.gameObject.SetActive(false);
-        InventoryManager.instance.gameObject.SetActive(false);
+        InventoryManager.instance.DeleteObject();
         ScoreManager.Instance.DisplayScore();
     }
 

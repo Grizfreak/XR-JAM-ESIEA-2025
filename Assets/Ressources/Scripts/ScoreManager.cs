@@ -61,6 +61,7 @@ public class ScoreManager : MonoBehaviour
         {
             value = (score + redEnd) / (greenEnd + redEnd);
         }
+        slider.value = value;
         slider.GetComponent<FaceDisplayer>().onValueChanged(value);
 
         if (score <= -30)

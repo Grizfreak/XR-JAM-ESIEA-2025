@@ -14,6 +14,7 @@ public class ScoreManager : MonoBehaviour
     public GameObject nextNotAble;
     public float redEnd;
     public float greenEnd;
+    public float minimumToPass;
 
     private void Awake()
     {
@@ -64,7 +65,7 @@ public class ScoreManager : MonoBehaviour
         slider.value = value;
         slider.GetComponent<FaceDisplayer>().onValueChanged(value,redEnd,greenEnd);
 
-        if (score <= -30)
+        if (score <= minimumToPass)
         {
             // disable the next button
             nextButton.GetComponent<XRSimpleInteractable>().enabled = false;

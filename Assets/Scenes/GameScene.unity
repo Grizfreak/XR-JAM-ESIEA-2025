@@ -6003,6 +6003,7 @@ MonoBehaviour:
   nextNotAble: {fileID: 1166854017}
   redEnd: -100
   greenEnd: 100
+  minimumToPass: 10
 --- !u!1001 &2095576648
 PrefabInstance:
   m_ObjectHideFlags: 0

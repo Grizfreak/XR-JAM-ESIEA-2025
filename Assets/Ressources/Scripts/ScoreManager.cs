@@ -36,6 +36,10 @@ public class ScoreManager : MonoBehaviour
 
     public void AddScore(int score)
     {
+        if (TimeManager.instance.timeLeft <= 0)
+        {
+            return;
+        }
         this.score += score;
     }
 

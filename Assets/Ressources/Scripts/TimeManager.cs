@@ -7,6 +7,7 @@ public class TimeManager : MonoBehaviour
     public float timeTillFinish = 45f;
     public float timeLeft = 0f;
     public static TimeManager instance;
+    public bool isPlayingMusic = false;
 
     private void Awake()
     {
@@ -33,13 +34,15 @@ public class TimeManager : MonoBehaviour
         {
             timeLeft -= Time.deltaTime;
             // if time is < 10 seconds, play a sound
-            if (timeLeft < 10f)
+            if (timeLeft < 10f && !isPlayingMusic)
             {
+                isPlayingMusic = true;
                 GetComponent<AudioSource>().Play();
             }
             yield return null;
         }
         GetComponent<AudioSource>().Stop();
+        isPlayingMusic = false;
         SpawningBehavior.instance.canSpawn = false;
         GamemodeManager.instance.EndGame();
     }

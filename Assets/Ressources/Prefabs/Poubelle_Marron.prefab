@@ -254,7 +254,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 7ee1931a181ea6842895dcb2bc752ebd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  TrashType: 3
+  TrashType: 2
   tagToSuck: Suckable
   badAnim: {fileID: 1457349053236353718}
   goodAnim: {fileID: 6047187260359092353}

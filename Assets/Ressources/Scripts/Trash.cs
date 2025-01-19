@@ -18,9 +18,16 @@ public class Trash : MonoBehaviour
     [TagSelector] public string tagToSuck;
     public TrashType trashType;
     public Sprite icon;
+    public ParticleSystem badAnim;
 
     public void Start()
     {
+        badAnim = GetComponentInChildren<ParticleSystem>();
         gameObject.tag = tagToSuck;
+    }
+
+    public void throwAnim()
+    {
+        badAnim.Play();
     }
 }

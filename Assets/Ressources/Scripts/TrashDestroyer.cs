@@ -11,11 +11,13 @@ public class TrashDestroyer : MonoBehaviour
     {
         if (collision.gameObject.CompareTag(tagToDestroy))
         {
-            Destroy(collision.gameObject);
             if (shouldRemoveScore)
             {
+                collision.gameObject.GetComponent<Trash>().throwAnim();
+                Destroy(collision.gameObject, 2f);
                 ScoreManager.Instance.AddScore(-10);
             }
+            else Destroy(collision.gameObject);
         }
     }
 }

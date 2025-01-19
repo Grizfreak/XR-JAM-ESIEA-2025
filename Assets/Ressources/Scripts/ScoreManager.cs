@@ -45,24 +45,20 @@ public class ScoreManager : MonoBehaviour
         // get the slider component in the children of the scoreScene
         UnityEngine.UI.Slider slider = scoreScene.GetComponentInChildren<UnityEngine.UI.Slider>();
         slider.transform.parent.gameObject.GetComponentInChildren<AudioSource>().Play();
+        slider.maxValue = greenEnd;
+        slider.minValue = redEnd;
         float value = 0f;
 
-        // set slider value based on the score, clamp the value between redEnd and greenEnd, respectively -50 and 50
-        // then normalize the value between 0 and 1
-        if (score < -redEnd)
+        if (score <= redEnd)
         {
-            value = 0;
+            value = redEnd;
         }
-        else if (score > greenEnd)
+        else if (score >= greenEnd)
         {
-            value = 1;
-        }
-        else
-        {
-            value = (score + redEnd) / (greenEnd + redEnd);
+            value = greenEnd;
         }
         slider.value = value;
-        slider.GetComponent<FaceDisplayer>().onValueChanged(value);
+        slider.GetComponent<FaceDisplayer>().onValueChanged(value,redEnd,greenEnd);
 
         if (score <= -30)
         {

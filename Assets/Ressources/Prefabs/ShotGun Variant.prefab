@@ -518,6 +518,10 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 792915889547225075, guid: a92941620d7cefc41a9622c861eea0c1, type: 3}
+      propertyPath: m_CullingMode
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 1766350100785038582, guid: a92941620d7cefc41a9622c861eea0c1, type: 3}
       propertyPath: m_Layer
       value: 2
@@ -844,7 +848,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   velocity: 5
   baseVelocity: 5
-  maxVelocity: 30
+  maxVelocity: 15
   gravity: 9.81
   launchPosition: {fileID: 6784228899593761145}
   lineRenderer: {fileID: 0}
@@ -852,7 +856,7 @@ MonoBehaviour:
   isProjecting: 0
   currentHold: 0
   timeBeforeAugmentingVelocity: 0.5
-  maxHold: 3
+  maxHold: 2.5
   holdButton: {fileID: 7451431285656475056, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   holdReleaseButton: {fileID: -5927772857508007951, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   hitPointMarker: {fileID: 7814158855663720484}

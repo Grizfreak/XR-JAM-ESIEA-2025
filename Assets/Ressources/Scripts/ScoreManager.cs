@@ -12,6 +12,10 @@ public class ScoreManager : MonoBehaviour
     public GameObject replayButton;
     public GameObject nextAble;
     public GameObject nextNotAble;
+    public float redStart = -30f;
+    public float redEnd = -60f;
+    public float greenStart = 20f;
+    public float greenEnd = 50f;
 
     private void Awake()
     {
@@ -42,34 +46,23 @@ public class ScoreManager : MonoBehaviour
         scoreScene.SetActive(true);
         // get the slider component in the children of the scoreScene
         UnityEngine.UI.Slider slider = scoreScene.GetComponentInChildren<UnityEngine.UI.Slider>();
-        //  > -30 orange  / > +10 green start
-        //  -60 red / +30 green end
         float value = 0f;
-        if (score < -60)
+
+        if (score >= greenEnd)
+        {
+            value = 1f;
+        } else if ( score <= redEnd)
         {
             value = 0f;
         }
-        else if (score < -30)
-        {
-            value = (score + 60) / 30f * 0.5f;
-        }
-        else if (score < 10)
-        {
-            value = 0.5f + score / 40f * 0.5f;
-        }
-        else if (score < 30)
-        {
-            value = 1f;
-        }
         else
         {
-            value = 1f + (score - 30) / 30f * 0.5f;
+            value = (score - (-1 * redEnd)) / (greenEnd - (-1 * redEnd));
         }
-
         slider.value = value;
         slider.GetComponent<FaceDisplayer>().onValueChanged(value);
 
-        if (score < -30)
+        if (score <= -30)
         {
             // disable the next button
             nextButton.GetComponent<XRSimpleInteractable>().enabled = false;

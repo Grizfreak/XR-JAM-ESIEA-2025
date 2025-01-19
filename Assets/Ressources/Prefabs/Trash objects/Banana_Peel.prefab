@@ -128,7 +128,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   tagToSuck: Suckable
   trashType: 2
-  icon: {fileID: 0}
+  icon: {fileID: 21300000, guid: 4dc4b822e5298174283535454273ec90, type: 3}
+  badAnim: {fileID: 0}
 --- !u!65 &8132203566267533202
 BoxCollider:
   m_ObjectHideFlags: 0

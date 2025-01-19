@@ -9,13 +9,13 @@ public class GamemodeManager : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        TimeManager.instance.StartTimer();
         switch (GameManager.instance.level)
         {
             case 0:
                 Debug.Log("Start Level 1");
                 setActiveGarbageCanvas(true);
                 garbageManager.gameObject.SetActive(false);
-                TimeManager.instance.StartTimer();
                 break;
 
             case 1:

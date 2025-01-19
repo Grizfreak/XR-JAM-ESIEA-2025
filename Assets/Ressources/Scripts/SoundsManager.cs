@@ -1,11 +1,11 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.XR.Interaction.Toolkit;
 
 public class SoundsManager : MonoBehaviour
 {
     public static SoundsManager instance;
-
     public enum SoundType
     {
         Standard,
@@ -59,5 +59,14 @@ public class SoundsManager : MonoBehaviour
             default:
                 return standardSounds[(int)soundEvent];
         }
+    }
+
+    public void changeSoundType(SelectEnterEventArgs args)
+    {
+        int numberOfTypes = System.Enum.GetNames(typeof(SoundType)).Length;
+        currentSoundType = (SoundType)(((int)currentSoundType + 1) % numberOfTypes);
+        args.interactableObject.transform.gameObject.GetComponentInChildren<AudioSource>().clip = GetSound(SoundEvent.ButtonPress);
+        args.interactableObject.transform.gameObject.GetComponentInChildren<AudioSource>().Play();
+        GameObject.FindGameObjectWithTag("NextButtonLobby").GetComponentInChildren<AudioSource>().clip = GetSound(SoundEvent.ButtonPress);
     }
 }

@@ -8,6 +8,7 @@ TagManager:
   - Gun
   - Suckable
   - Controller
+  - NextButtonLobby
   layers:
   - Default
   - TransparentFX

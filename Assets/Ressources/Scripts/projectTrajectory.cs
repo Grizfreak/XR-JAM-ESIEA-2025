@@ -17,6 +17,7 @@ public class projectTrajectory : MonoBehaviour
     public int maxPoints;
     public bool isProjecting;
     public float currentHold;
+    public float timeBeforeAugmentingVelocity;
     public float maxHold;
     public InputActionReference holdButton;
     public InputActionReference holdReleaseButton;
@@ -48,9 +49,9 @@ public class projectTrajectory : MonoBehaviour
             {
                 currentHold = maxHold;
             }
-            if (currentHold > 0.5f)
+            if (currentHold > timeBeforeAugmentingVelocity)
             {
-                velocity = (currentHold + 0.5f) * maxVelocity / maxHold;
+                velocity = Mathf.Lerp(baseVelocity, maxVelocity, (currentHold - timeBeforeAugmentingVelocity) / (maxHold - timeBeforeAugmentingVelocity));
             }
 
             controller.SendHapticImpulse(currentHold / maxHold, 0.5f);

@@ -842,15 +842,16 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: cd7760be00dbbfa4e841b0458d5fc84c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  velocity: 10
-  baseVelocity: 10
-  maxVelocity: 40
+  velocity: 5
+  baseVelocity: 5
+  maxVelocity: 30
   gravity: 9.81
   launchPosition: {fileID: 6784228899593761145}
   lineRenderer: {fileID: 0}
   maxPoints: 100
   isProjecting: 0
   currentHold: 0
+  timeBeforeAugmentingVelocity: 0.5
   maxHold: 3
   holdButton: {fileID: 7451431285656475056, guid: c348712bda248c246b8c49b3db54643f, type: 3}
   holdReleaseButton: {fileID: -5927772857508007951, guid: c348712bda248c246b8c49b3db54643f, type: 3}

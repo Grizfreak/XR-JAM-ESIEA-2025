@@ -9,7 +9,10 @@ public class UpdateSlider : MonoBehaviour
     {
         if (TimeManager.instance != null)
         {
-            GetComponent<UnityEngine.UI.Slider>().value = TimeManager.instance.timeLeft / TimeManager.instance.timeTillFinish;
+            // value should be 1 when time is up
+            // value should be 0 when time is at the beginning
+            float value = 1f - (TimeManager.instance.timeLeft / TimeManager.instance.timeTillFinish);
+            GetComponent<UnityEngine.UI.Slider>().value = value;
         }
     }
 }

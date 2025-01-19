@@ -25,7 +25,7 @@ public class suckProjectile : MonoBehaviour
 
     public void suckTrigger()
     {
-        if (!GetComponent<projectTrajectory>().isProjecting)
+        if (!GetComponent<projectTrajectory>().isProjecting && !GetComponent<InventoryManager>().IsFull())
         {
             isSucking = true;
             windAnim.SetActive(true);

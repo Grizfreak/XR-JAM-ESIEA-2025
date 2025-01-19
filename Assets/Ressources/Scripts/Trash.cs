@@ -36,6 +36,7 @@ public class Trash : MonoBehaviour
         // instancier un système de particules
         GameObject particle = Instantiate(particles, transform.position, particles.transform.rotation);
         particle.GetComponent<ParticleSystem>().Play();
+        particle.GetComponent<AudioSource>().Play();
         Destroy(particle, 2f);
 
     }

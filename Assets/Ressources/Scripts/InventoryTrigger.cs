@@ -23,6 +23,8 @@ public class InventoryTrigger : MonoBehaviour
             // suck the object
             suckManager.GetComponent<InventoryManager>().AddItem(other.gameObject);
             other.gameObject.SetActive(false);
+            // disable vacuum
+            suckManager.GetComponent<suckProjectile>().disableVacuum();
         }
     }
 }

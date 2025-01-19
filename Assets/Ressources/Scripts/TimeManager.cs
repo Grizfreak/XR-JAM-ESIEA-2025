@@ -32,8 +32,14 @@ public class TimeManager : MonoBehaviour
         while (timeLeft > 0)
         {
             timeLeft -= Time.deltaTime;
+            // if time is < 10 seconds, play a sound
+            if (timeLeft < 10)
+            {
+                GetComponent<AudioSource>().Play();
+            }
             yield return null;
         }
+        GetComponent<AudioSource>().Stop();
         SpawningBehavior.instance.canSpawn = false;
         GamemodeManager.instance.EndGame();
     }

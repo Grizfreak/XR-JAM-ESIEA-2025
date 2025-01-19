@@ -24,6 +24,7 @@ public class projectTrajectory : MonoBehaviour
     public GameObject hitPointMarker;
     public LayerMask layerMask;
     public ActionBasedController controller;
+    public AudioSource vacuumEmptyOut;
     // Start is called before the first frame update
     void Start()
     {
@@ -61,6 +62,8 @@ public class projectTrajectory : MonoBehaviour
         else if (isProjecting && !GetComponent<InventoryManager>().IsFull())
         {
             Debug.Log("Empty");
+            vacuumEmptyOut.Play();
+            vacuumEmptyOut.loop = true;
         }
     }
 
@@ -118,6 +121,8 @@ public class projectTrajectory : MonoBehaviour
             GetComponent<shootProjectile>().shoot(launchPosition, launchPosition.forward, velocity);
             controller.SendHapticImpulse(0f, 0.5f);
         }
+        vacuumEmptyOut.loop = false;
+        vacuumEmptyOut.Stop();
         isProjecting = false;
         hitPointMarker.SetActive(false);
         lineRenderer.enabled = false;

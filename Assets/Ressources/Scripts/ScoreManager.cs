@@ -30,8 +30,8 @@ public class ScoreManager : MonoBehaviour
         nextButton.GetComponent<XRSimpleInteractable>().enabled = true;
         nextAble.SetActive(true);
         nextNotAble.SetActive(false);
-        replayButton.GetComponent<XRSimpleInteractable>().selectEntered.AddListener(delegate { GameManager.instance.resetLevel(); });
-        nextButton.GetComponent<XRSimpleInteractable>().selectEntered.AddListener(delegate { GameManager.instance.LoadNextLevel(); });
+        replayButton.GetComponent<XRSimpleInteractable>().selectEntered.AddListener(args => { GameManager.instance.resetLevel(args); });
+        nextButton.GetComponent<XRSimpleInteractable>().selectEntered.AddListener(args => { GameManager.instance.LoadNextLevel(args); });
         score = 0;
         scoreScene.SetActive(false);
     }

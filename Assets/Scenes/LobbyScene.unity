@@ -6809,7 +6809,7 @@ MonoBehaviour:
   - {fileID: 8300000, guid: ee62154009618ac4e8b407f7c00c1924, type: 3}
   - {fileID: 8300000, guid: 86f74b2236cffde4790c82d28819ca5b, type: 3}
   - {fileID: 8300000, guid: 6affc2548ce4b2942a9f057b15de68d5, type: 3}
-  - {fileID: 8300000, guid: 568ac37eb2031f949a8ca73a168d3abb, type: 3}
+  - {fileID: 8300000, guid: 8f9a9cca1865b3540872561ce530855d, type: 3}
   goofySounds: []
   vocalSounds: []
   currentSoundType: 0

@@ -90,7 +90,8 @@ public class GamemodeManager : MonoBehaviour
     public void EndGame()
     {
         GameObject gun = GameObject.FindGameObjectWithTag("Gun");
-        gun.SetActive(false);
+        if (gun != null)
+            gun.SetActive(false);
         if (GameManager.instance.isRightHanded)
         {
             XRModelRight.SetActive(true);

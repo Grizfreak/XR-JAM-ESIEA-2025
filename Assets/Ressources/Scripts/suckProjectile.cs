@@ -11,6 +11,8 @@ public class suckProjectile : MonoBehaviour
     public bool isSucking;
     public GameObject suckionBox;
     public GameObject windAnim;
+    public AudioSource vacuumFullIn;
+    public AudioSource vacuumIn;
     // Start is called before the first frame update
     void Start()
     {
@@ -27,18 +29,41 @@ public class suckProjectile : MonoBehaviour
     {
         if (!GetComponent<projectTrajectory>().isProjecting && !GetComponent<InventoryManager>().IsFull())
         {
+            vacuumIn.Play();
+            vacuumIn.loop = true;
             isSucking = true;
             windAnim.SetActive(true);
             suckionBox.SetActive(true);
             suckionBox.GetComponent<suckTrigger>().setSuckForce(suckForce);
         }
+        else
+        {
+            vacuumFullIn.Play();
+            vacuumFullIn.loop = true;
+        }
     }
 
     public void suckReleaseTrigger()
+    {
+        vacuumIn.Stop();
+        vacuumIn.loop = false;
+        vacuumFullIn.Stop();
+        vacuumFullIn.loop = false;
+        isSucking = false;
+        windAnim.SetActive(false);
+        // deactivate the suction box
+        suckionBox.SetActive(false);
+    }
+
+    public void disableVacuum()
     {
         isSucking = false;
         windAnim.SetActive(false);
         // deactivate the suction box
         suckionBox.SetActive(false);
+        vacuumIn.Stop();
+        vacuumIn.loop = false;
+        vacuumFullIn.Stop();
+        vacuumFullIn.loop = false;
     }
 }

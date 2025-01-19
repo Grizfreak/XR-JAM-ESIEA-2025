@@ -657,9 +657,21 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: 35467d838d172ad41af4a5e8af6a4e2c, type: 2}
+    - target: {fileID: 5567085194146181357, guid: fd843704b383c374fa3232edf8d2a66d, type: 3}
+      propertyPath: soundEvent
+      value: 6
+      objectReference: {fileID: 0}
     - target: {fileID: 5911399825732599416, guid: fd843704b383c374fa3232edf8d2a66d, type: 3}
       propertyPath: m_Name
       value: Particle System (1)
+      objectReference: {fileID: 0}
+    - target: {fileID: 8229663957721879997, guid: fd843704b383c374fa3232edf8d2a66d, type: 3}
+      propertyPath: m_Volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8229663957721879997, guid: fd843704b383c374fa3232edf8d2a66d, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
@@ -728,9 +740,21 @@ PrefabInstance:
       propertyPath: m_Materials.Array.data[0]
       value: 
       objectReference: {fileID: 2100000, guid: ad4992d048357d541adec3a3134efcc4, type: 2}
+    - target: {fileID: 5567085194146181357, guid: fd843704b383c374fa3232edf8d2a66d, type: 3}
+      propertyPath: soundEvent
+      value: 7
+      objectReference: {fileID: 0}
     - target: {fileID: 5911399825732599416, guid: fd843704b383c374fa3232edf8d2a66d, type: 3}
       propertyPath: m_Name
       value: Particle System
+      objectReference: {fileID: 0}
+    - target: {fileID: 8229663957721879997, guid: fd843704b383c374fa3232edf8d2a66d, type: 3}
+      propertyPath: m_Volume
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8229663957721879997, guid: fd843704b383c374fa3232edf8d2a66d, type: 3}
+      propertyPath: m_PlayOnAwake
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []

@@ -17,11 +17,13 @@ public class TrashCollector : MonoBehaviour
             if (other.GetComponent<Trash>().trashType == TrashType)
             {
                 goodAnim.Play();
+                goodAnim.GetComponent<AudioSource>().Play();
                 ScoreManager.Instance.AddScore(10);
             }
             else
             {
                 badAnim.Play();
+                badAnim.GetComponent<AudioSource>().Play();
                 ScoreManager.Instance.AddScore(-5);
             }
             Destroy(other.gameObject);

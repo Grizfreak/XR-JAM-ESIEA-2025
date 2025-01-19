@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class shootProjectile : MonoBehaviour
 {
+    public AudioSource shootSound;
     // Start is called before the first frame update
     void Start()
     {
@@ -18,6 +19,7 @@ public class shootProjectile : MonoBehaviour
 
     public void shoot(Transform startPoint, Vector3 direction, float velocity)
     {
+        shootSound.Play();
         GameObject newProjectile = GetComponent<InventoryManager>().retrieveItem();
         newProjectile.SetActive(true);
         newProjectile.transform.position = startPoint.position;

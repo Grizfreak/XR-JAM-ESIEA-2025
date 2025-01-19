@@ -10,6 +10,7 @@ public class GarbageManager : MonoBehaviour
     // Timer pour l'intervalle de 10 secondes
     private float timer = 0f;
     private bool isUpdateInProgress = false;
+    public float updateInterval = 10f;
 
     // Start is called before the first frame update
     void Start()
@@ -24,7 +25,7 @@ public class GarbageManager : MonoBehaviour
         timer += Time.deltaTime;
 
         // Si 10 secondes se sont écoulées et qu'aucune mise à jour n'est en cours
-        if (timer >= 10f && !isUpdateInProgress)
+        if (timer >= updateInterval && !isUpdateInProgress)
         {
             timer = 0f;
             StartCoroutine(UpdateGarbagePositions());

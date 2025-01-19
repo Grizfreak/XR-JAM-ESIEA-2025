@@ -15,6 +15,7 @@ public class GamemodeManager : MonoBehaviour
                 Debug.Log("Start Level 1");
                 setActiveGarbageCanvas(true);
                 garbageManager.gameObject.SetActive(false);
+                TimeManager.instance.StartTimer();
                 break;
 
             case 1:

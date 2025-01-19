@@ -2786,6 +2786,17 @@
                 },
                 {
                     "name": "",
+                    "id": "5f0752a7-5f75-4c2a-9a35-1aa1ee460d97",
+                    "path": "<XRController>{LeftHand}/{TriggerButton}",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": ";Generic XR Controller",
+                    "action": "Trigger Pressed",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "7fc054bf-c261-428b-8a41-5407ef6e0d58",
                     "path": "<XRController>{RightHand}/{TriggerButton}",
                     "interactions": "Press(behavior=1)",
@@ -2797,8 +2808,19 @@
                 },
                 {
                     "name": "",
+                    "id": "74cf0803-03a7-40e8-8935-0116f982d2c5",
+                    "path": "<XRController>{LeftHand}/{TriggerButton}",
+                    "interactions": "Press(behavior=1)",
+                    "processors": "",
+                    "groups": ";Generic XR Controller",
+                    "action": "Trigger Released",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
                     "id": "a09e54e9-1fcb-48ee-8ee9-f564cbd67426",
-                    "path": "<XRController>{RightHand}/gripButton",
+                    "path": "<XRController>{RightHand}/{GripButton}",
                     "interactions": "Press",
                     "processors": "",
                     "groups": ";Generic XR Controller",
@@ -2808,8 +2830,30 @@
                 },
                 {
                     "name": "",
-                    "id": "1ad0a419-646c-4865-9942-37750e3d73b5",
-                    "path": "<XRController>{RightHand}/gripButton",
+                    "id": "9d70d89f-b2cc-4aa6-87f7-349179f03758",
+                    "path": "<XRController>{LeftHand}/{GripButton}",
+                    "interactions": "Press",
+                    "processors": "",
+                    "groups": ";Generic XR Controller",
+                    "action": "Grab Pressed",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "dab45712-a174-4a0a-a8d6-364333aab5cf",
+                    "path": "<XRController>{RightHand}/{GripButton}",
+                    "interactions": "Press(behavior=1)",
+                    "processors": "",
+                    "groups": ";Generic XR Controller",
+                    "action": "Grab Released",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "907f8bf9-8ff2-4479-880f-f5587227bb66",
+                    "path": "<XRController>{LeftHand}/{GripButton}",
                     "interactions": "Press(behavior=1)",
                     "processors": "",
                     "groups": ";Generic XR Controller",

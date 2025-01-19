@@ -12,8 +12,8 @@ GameObject:
   - component: {fileID: 4649875927519247879}
   - component: {fileID: 7449898044972878541}
   - component: {fileID: 2344993709551214799}
-  - component: {fileID: 616279006765420322}
   - component: {fileID: 861690761699213943}
+  - component: {fileID: 3598524543420605317}
   m_Layer: 0
   m_Name: Pizza Margarita Slice
   m_TagString: Untagged
@@ -32,7 +32,7 @@ Transform:
   m_LocalRotation: {x: 0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: -0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
+  m_ConstrainProportionsScale: 1
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -113,8 +113,22 @@ Rigidbody:
   m_Interpolate: 0
   m_Constraints: 0
   m_CollisionDetection: 0
---- !u!64 &616279006765420322
-MeshCollider:
+--- !u!114 &861690761699213943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8963191013033372440}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 9cc8fc033b1a85e41b55ab00a9ff4d04, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  tagToSuck: Suckable
+  trashType: 0
+--- !u!65 &3598524543420605317
+BoxCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
@@ -131,21 +145,6 @@ MeshCollider:
   m_IsTrigger: 0
   m_ProvidesContacts: 0
   m_Enabled: 1
-  serializedVersion: 5
-  m_Convex: 1
-  m_CookingOptions: 30
-  m_Mesh: {fileID: 2358874452545590804, guid: e0fe3a49876350f4cb9a6791b45374ca, type: 3}
---- !u!114 &861690761699213943
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 8963191013033372440}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 9cc8fc033b1a85e41b55ab00a9ff4d04, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  tagToSuck: Suckable
-  trashType: 0
+  serializedVersion: 3
+  m_Size: {x: 0.51181984, y: 0.1087184, z: 0.49633923}
+  m_Center: {x: -0.0018991828, y: 0.054359045, z: 0.02511637}

@@ -10,6 +10,18 @@ public class TrashCollector : MonoBehaviour
     [TagSelector] public string tagToSuck;
     public ParticleSystem badAnim;
     public ParticleSystem goodAnim;
+    private int goodBinScore = 15;
+    private int wrongBinScore = -5;
+
+    private void Start()
+    {
+        if(ScoreManager.Instance != null)
+        {
+            goodBinScore = ScoreManager.Instance.rightBinScoreValue;
+            wrongBinScore = ScoreManager.Instance.wrongBinScoreValue;
+        }
+    }
+
     public void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag(tagToSuck))
@@ -18,13 +30,13 @@ public class TrashCollector : MonoBehaviour
             {
                 goodAnim.Play();
                 goodAnim.GetComponent<AudioSource>().Play();
-                ScoreManager.Instance.AddScore(10);
+                ScoreManager.Instance.AddScore(goodBinScore);
             }
             else
             {
                 badAnim.Play();
                 badAnim.GetComponent<AudioSource>().Play();
-                ScoreManager.Instance.AddScore(-5);
+                ScoreManager.Instance.AddScore(wrongBinScore);
             }
             Destroy(other.gameObject);
         }

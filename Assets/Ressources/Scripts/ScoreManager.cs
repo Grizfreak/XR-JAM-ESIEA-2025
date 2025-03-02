@@ -16,6 +16,10 @@ public class ScoreManager : MonoBehaviour
     public float greenEnd;
     public float minimumToPass;
 
+    public int floorScoreValue = -10;
+    public int wrongBinScoreValue = -5;
+    public int rightBinScoreValue = 15;
+
     private void Awake()
     {
         if (Instance == null)

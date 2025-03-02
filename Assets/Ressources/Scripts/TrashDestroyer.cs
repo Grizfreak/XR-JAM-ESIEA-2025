@@ -7,6 +7,18 @@ public class TrashDestroyer : MonoBehaviour
 {
     [TagSelector] public string tagToDestroy;
     public bool shouldRemoveScore;
+
+    private int floorTrashScore = -10;
+
+    private void Start()
+    {
+        if (ScoreManager.Instance != null)
+        {
+            floorTrashScore = ScoreManager.Instance.floorScoreValue;
+        }
+    }
+
+
     private void OnCollisionEnter(Collision collision)
     {
         if (collision.gameObject.CompareTag(tagToDestroy))
